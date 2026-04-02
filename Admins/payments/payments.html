@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY UU - Payment Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-[#f8f9fc] text-gray-800 h-screen flex overflow-hidden">
+
+    <aside class="w-64 bg-white border-r border-gray-200 flex flex-col justify-between h-full z-10 flex-shrink-0">
+        <div>
+            <div class="h-16 flex items-center px-6 border-b border-gray-100">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-blue-700 text-white rounded flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-sm font-bold text-gray-900 leading-tight">MY UU</h1>
+                        <p class="text-[10px] text-gray-500">Student ERP</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="p-4 space-y-1">
+                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
+                    <i class="fa-solid fa-border-all w-5 text-center"></i> Dashboard
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
+                    <i class="fa-solid fa-user-group w-5 text-center"></i> Students
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
+                    <i class="fa-solid fa-book-open w-5 text-center"></i> Courses
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
+                    <i class="fa-solid fa-chart-line w-5 text-center"></i> Results
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-medium">
+                    <i class="fa-solid fa-dollar-sign w-5 text-center"></i> Payments
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
+                    <i class="fa-regular fa-bell w-5 text-center"></i> Notifications
+                </a>
+                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
+                    <i class="fa-solid fa-gear w-5 text-center"></i> Settings
+                </a>
+            </nav>
+        </div>
+
+        <div class="p-4 border-t border-gray-100">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 bg-red-50 text-gray-700 rounded-lg text-sm font-medium hover:bg-red-100 transition-colors">
+                <i class="fa-solid fa-arrow-right-from-bracket w-5 text-center text-gray-500"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col h-full overflow-hidden">
+        
+        <header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8 flex-shrink-0">
+            <div class="relative w-[400px]">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-gray-400 text-sm"></i>
+                <input type="text" placeholder="search resources" class="w-full bg-gray-100 text-sm rounded-md pl-10 pr-4 py-2 outline-none focus:ring-1 focus:ring-blue-500">
+            </div>
+
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <button class="relative text-gray-500 hover:text-gray-700">
+                        <i class="fa-regular fa-bell text-lg"></i>
+                        <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+                    </button>
+                    <button class="text-gray-500 hover:text-gray-700">
+                        <i class="fa-solid fa-gear text-lg"></i>
+                    </button>
+                </div>
+                <div class="h-6 w-px bg-gray-200"></div>
+                <div class="flex items-center gap-3">
+                    <div class="text-right">
+                        <p class="text-sm font-bold text-gray-800 leading-none">Admin</p>
+                        <p class="text-xs text-gray-500 mt-1">ID: 2021-CS-452</p>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=E2E8F0&color=475569" alt="Profile" class="w-9 h-9 rounded-full bg-gray-200">
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-8">
+            
+            <div class="mb-6">
+                <h2 class="text-[22px] font-bold text-gray-900">Payment Verification</h2>
+                <p class="text-sm text-gray-500 mt-1">Review and verify student payment submissions</p>
+            </div>
+
+            <div class="grid grid-cols-4 gap-6 mb-8">
+                <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                    <p class="text-xs font-medium text-gray-500 mb-2">Pending Verification</p>
+                    <h3 class="text-2xl font-bold text-[#f59e0b]">2</h3>
+                    <p class="text-xs text-gray-400 mt-1">$4000.00</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                    <p class="text-xs font-medium text-gray-500 mb-2">Approved Today</p>
+                    <h3 class="text-2xl font-bold text-[#10b981]">1</h3>
+                    <p class="text-xs text-gray-400 mt-1">$2500.00</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                    <p class="text-xs font-medium text-gray-500 mb-2">Rejected</p>
+                    <h3 class="text-2xl font-bold text-[#ef4444]">1</h3>
+                    <p class="text-xs text-gray-400 mt-1 opacity-0">-</p> </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                    <p class="text-xs font-medium text-gray-500 mb-2">Total Collected</p>
+                    <h3 class="text-2xl font-bold text-[#3b82f6]">$485K</h3>
+                    <p class="text-xs text-gray-400 mt-1">This month</p>
+                </div>
+            </div>
+
+            <div class="mb-6 flex gap-4">
+                <div class="relative flex-1">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-3 text-gray-400 text-sm"></i>
+                    <input type="text" placeholder="Search by student name, ID, or transaction ID..." class="w-full bg-white border border-gray-200 rounded-lg pl-11 pr-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all">
+                </div>
+                <button class="bg-white border border-gray-200 text-gray-600 px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors shadow-sm">
+                    Filter
+                </button>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-100 bg-gray-50/50">
+                                <th class="text-xs font-semibold text-gray-500 px-6 py-4">Payment ID</th>
+                                <th class="text-xs font-semibold text-gray-500 px-6 py-4">Student</th>
+                                <th class="text-xs font-semibold text-gray-500 px-6 py-4">Description</th>
+                                <th class="text-xs font-semibold text-gray-500 px-6 py-4">Amount</th>
+                                <th class="text-xs font-semibold text-gray-500 px-6 py-4">Method</th>
+                                <th class="text-xs font-semibold text-gray-500 px-6 py-4">Transaction ID</th>
+                                <th class="text-xs font-semibold text-gray-500 px-6 py-4">Date</th>
+                                <th class="text-xs font-semibold text-gray-500 px-6 py-4 text-center">Status</th>
+                                <th class="text-xs font-semibold text-gray-500 px-6 py-4 text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            
+                            <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                                <td class="px-6 py-4 text-blue-600 font-medium">PAY-2024-001</td>
+                                <td class="px-6 py-4">
+                                    <p class="font-medium text-gray-900">Hasib Ahmed</p>
+                                    <p class="text-xs text-gray-500">2021-CS-001</p>
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">Semester 5 Tuition Fee</td>
+                                <td class="px-6 py-4 font-bold text-gray-900">৳2500.00</td>
+                                <td class="px-6 py-4 text-gray-600">bKash</td>
+                                <td class="px-6 py-4 text-gray-600 font-medium">BKH123456789</td>
+                                <td class="px-6 py-4 text-gray-600">2024-02-14</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-[#fffbeb] text-[#d97706] border border-[#fde68a]">
+                                        <i class="fa-regular fa-clock"></i> Pending
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-right whitespace-nowrap">
+                                    <div class="flex items-center justify-end gap-3">
+                                        <button class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="w-6 h-6 rounded-full border border-green-500 text-green-500 hover:bg-green-50 flex items-center justify-center transition-colors"><i class="fa-solid fa-check text-[10px]"></i></button>
+                                        <button class="w-6 h-6 rounded-full border border-red-500 text-red-500 hover:bg-red-50 flex items-center justify-center transition-colors"><i class="fa-solid fa-xmark text-[10px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                                <td class="px-6 py-4 text-blue-600 font-medium">PAY-2024-002</td>
+                                <td class="px-6 py-4">
+                                    <p class="font-medium text-gray-900">Nusrat Jahan</p>
+                                    <p class="text-xs text-gray-500">2021-CS-002</p>
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">Lab Fee - Semester 5</td>
+                                <td class="px-6 py-4 font-bold text-gray-900">৳1500.00</td>
+                                <td class="px-6 py-4 text-gray-600">Nagad</td>
+                                <td class="px-6 py-4 text-gray-600 font-medium">NGD987654321</td>
+                                <td class="px-6 py-4 text-gray-600">2024-02-13</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-[#fffbeb] text-[#d97706] border border-[#fde68a]">
+                                        <i class="fa-regular fa-clock"></i> Pending
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-right whitespace-nowrap">
+                                    <div class="flex items-center justify-end gap-3">
+                                        <button class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="w-6 h-6 rounded-full border border-green-500 text-green-500 hover:bg-green-50 flex items-center justify-center transition-colors"><i class="fa-solid fa-check text-[10px]"></i></button>
+                                        <button class="w-6 h-6 rounded-full border border-red-500 text-red-500 hover:bg-red-50 flex items-center justify-center transition-colors"><i class="fa-solid fa-xmark text-[10px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                                <td class="px-6 py-4 text-blue-600 font-medium">PAY-2024-003</td>
+                                <td class="px-6 py-4">
+                                    <p class="font-medium text-gray-900">Karim Rahman</p>
+                                    <p class="text-xs text-gray-500">2022-EEE-045</p>
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">Semester 3 Tuition Fee</td>
+                                <td class="px-6 py-4 font-bold text-gray-900">৳2500.00</td>
+                                <td class="px-6 py-4 text-gray-600">Card</td>
+                                <td class="px-6 py-4 text-gray-600 font-medium">CRD456789123</td>
+                                <td class="px-6 py-4 text-gray-600">2024-02-12</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-[#ecfdf5] text-[#059669] border border-[#a7f3d0]">
+                                        <i class="fa-regular fa-circle-check"></i> Approved
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-right whitespace-nowrap">
+                                    <div class="flex items-center justify-end gap-3">
+                                        <button class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-gray-50/50 transition-colors">
+                                <td class="px-6 py-4 text-blue-600 font-medium">PAY-2024-004</td>
+                                <td class="px-6 py-4">
+                                    <p class="font-medium text-gray-900">Sadia Islam</p>
+                                    <p class="text-xs text-gray-500">2020-BBA-112</p>
+                                </td>
+                                <td class="px-6 py-4 text-gray-700">Library Fine</td>
+                                <td class="px-6 py-4 font-bold text-gray-900">৳200.00</td>
+                                <td class="px-6 py-4 text-gray-600">bKash</td>
+                                <td class="px-6 py-4 text-gray-600 font-medium">BKH111222333</td>
+                                <td class="px-6 py-4 text-gray-600">2024-02-10</td>
+                                <td class="px-6 py-4 text-center">
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-[#fef2f2] text-[#dc2626] border border-[#fecaca]">
+                                        <i class="fa-regular fa-circle-xmark"></i> Rejected
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 text-right whitespace-nowrap">
+                                    <div class="flex items-center justify-end gap-3">
+                                        <button class="text-blue-500 hover:text-blue-700 transition-colors"><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
